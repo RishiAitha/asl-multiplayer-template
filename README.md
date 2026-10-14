@@ -5,6 +5,7 @@ This is a template project outlining how to set up basic systems for social game
 ## Setting up Unity's Multiplayer Services SDK
 
 Much of the relevant info for creating multiplayer systems can be found here: [Multiplayer Services SDK Docs](https://docs.unity.com/en-us/mps-sdk)
+Cost info for multiplayer hosting (which will, at a small scale, almost certainly not become an issue) can be found here: [Unity Services Pricing](https://legacy-activation.unity3d.com/products/gaming-services/pricing)
 
 There are very many approaches to setting up multiplayer games with Unity or other engines. The examples here use a particular approach that is easy to test but still functional when deployed; we use Netcode for GameObjects for basic object networking, send information over a Relay network, and handle match creation with Matchmaker. This allows us to skip cumbersome join codes and other systems. However, feel free to utilize your own alternative approaches! This is not the ONLY way to make a multiplayer mobile game.
 
@@ -24,3 +25,5 @@ Another useful package is the Multiplayer Play Mode package, which allows you to
 ![Multiplayer Play Mode Package](/img/multiplayer-play-mode-package.png)
 
 For setting up Matchmaker, we need to take a few additional steps.
+Under products, enter the matchmaker menu. You should see a step-by-step guide, so start with the "integrate matchmaker" step, and choose Unity and SDK, and hit next until you can finish (the rest is already done). Next, create a queue (the name of the queue will be used to create matches), and choose the max players on a ticket (max group that can queue together, usually 1 unless you have a party system or something). 
+Then, you can create a pool, and name it something different and set a timeout (30 or 60 seconds usually). For hosting, select client hosting (for this guide, if you are using a different approach you can choose something else), and then you are taken to the match definition page. Name your match, and choose the number of players per team and the number of teams. You will then be able to use this queue and pool for automatic matchmaking!
